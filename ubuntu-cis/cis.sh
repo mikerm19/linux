@@ -55,7 +55,7 @@ iptables -A INPUT -p udp -m state --state ESTABLISHED -j ACCEPT
 iptables -A INPUT -p icmp -m state --state ESTABLISHED -j ACCEPT
 # Open inbound ssh(tcp port 22) connections
 iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
-sudo netfilter-persistent save
+netfilter-persistent save
 
 echo 'GRUB_CMDLINE_LINUX="audit=1"' >> /etc/default/grub
 update-grub
